@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import Brightness5OutlinedIcon from '@material-ui/icons/Brightness5Outlined';
 import { makeStyles, Theme } from '@material-ui/core/styles';
+import ContactMenu from './contact-menu';
 import NavMenu from './navigation-menu';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
@@ -22,6 +23,7 @@ export interface IHeaderProps {
 const useStyles = makeStyles((theme) => ({
 	appBarRoot: {
 		background: theme.palette.background.default,
+		display: 'flex',
 		flexGrow: 1,
 	},
 	headerTitleRoot: {
@@ -94,6 +96,7 @@ export default function Header(props: IHeaderProps) {
 					<Divider variant="middle" classes={{ root: classes.dividerRoot }} />
 					<Toolbar>
 						<NavMenu />
+						<ContactMenu />
 					</Toolbar>
 				</AppBar>
 			</HideOnScroll>
