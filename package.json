@@ -1,56 +1,56 @@
 {
-  "name": "personal-profile",
-  "author": "Ethan Voon",
-  "license": "UNLICENSED",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://ethan-voon.github.io/personal-profile/",
-  "dependencies": {
-    "@material-ui/core": "^4.9.14",
-    "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "fontsource-roboto": "^2.1.3",
-    "gh-pages": "^2.2.0",
-    "minimist": "^1.2.5",
-    "peer": "^0.5.3",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
-    "source-map-loader": "^0.2.4",
-    "typescript": "^3.9.2",
-    "websocket-extensions": "^0.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "prettier": "prettier --write \"{*.{js,ts},src/**/*.{js,jsx,ts,tsx,less}}\"",
-    "prettier-check": "prettier --list-different \"{*.{js,ts},src/**/*.{js,jsx,ts,tsx}}\""
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "install-peers": "^1.0.3"
-  }
+	"name": "personal-profile",
+	"author": "Ethan Voon",
+	"license": "UNLICENSED",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "https://ethan.voonclan.com",
+	"dependencies": {
+		"@material-ui/core": "^4.9.14",
+		"@material-ui/icons": "^4.9.1",
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.3.2",
+		"@testing-library/user-event": "^7.1.2",
+		"awesome-typescript-loader": "^5.2.1",
+		"fontsource-roboto": "^2.1.3",
+		"gh-pages": "^2.2.0",
+		"minimist": "^1.2.5",
+		"peer": "^0.5.3",
+		"react": "^16.13.0",
+		"react-dom": "^16.13.0",
+		"react-scripts": "3.4.0",
+		"source-map-loader": "^0.2.4",
+		"typescript": "^3.9.2",
+		"websocket-extensions": "^0.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"prettier": "prettier --write \"{*.{js,ts},src/**/*.{js,jsx,ts,tsx,less}}\"",
+		"prettier-check": "prettier --list-different \"{*.{js,ts},src/**/*.{js,jsx,ts,tsx}}\""
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-prettier": "^3.1.3",
+		"install-peers": "^1.0.3"
+	}
 }
