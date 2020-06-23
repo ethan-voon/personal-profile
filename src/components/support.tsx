@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import HomeMainCardBackground from '../images/home-maincard-background.jpg';
 import { IPageProps } from '../App';
+import Grid from '@material-ui/core/Grid/Grid';
 
 const useStyles = makeStyles((theme) => ({
 	valuePropTextRoot: {
@@ -34,15 +34,23 @@ export default function Support(props: IPageProps) {
 
 	return (
 		<>
-			<Paper component="span" classes={{ root: classes.supportPaperRoot }}>
-				<Typography
-					component="span"
-					variant="h3"
-					classes={{ root: classes.valuePropTextRoot }}
-				>
-					*Support Links*
-				</Typography>
-			</Paper>
+			<Grid
+				component="span"
+				justify="center"
+				alignItems="center"
+				alignContent="center"
+				container
+			>
+				<Grid component="span" xs={12} item>
+					<Typography
+						component="span"
+						variant="h3"
+						classes={{ root: classes.valuePropTextRoot }}
+					>
+						*Support Links*
+					</Typography>
+				</Grid>
+			</Grid>
 		</>
 	);
 }

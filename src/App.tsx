@@ -4,12 +4,12 @@ import { createMuiTheme, MuiThemeProvider, Theme, makeStyles } from '@material-u
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Footer from './components/footer';
-// import Header from './components/header';
 import NavTabs from './components/tabs';
 
 export interface IAppProps {}
 export interface IPageProps {
 	theme: Theme;
+	toggleTheme?: () => void;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function App(props: IAppProps) {
 	const [themeState, setTheme] = useState(createMuiTheme({ palette: { type: 'dark' } }));
-	const classes = useStyles();
 
 	const toggleTheme = () => {
 		setTheme({
@@ -75,6 +74,8 @@ export default function App(props: IAppProps) {
 		},
 	});
 
+	const classes = useStyles();
+
 	return (
 		<>
 			<MuiThemeProvider theme={theme}>
@@ -87,11 +88,8 @@ export default function App(props: IAppProps) {
 						alignContent="center"
 						justify="center"
 					>
-						{/* <Grid xs={11} component="span" item>
-							<Header {...props} theme={themeState} toggleTheme={toggleTheme} />
-						</Grid> */}
 						<Grid xs={11} component="span" item>
-							<NavTabs theme={themeState} />
+							<NavTabs theme={themeState} toggleTheme={toggleTheme} />
 						</Grid>
 						<Grid xs={11} component="span" item></Grid>
 						<Grid component="span" item>
