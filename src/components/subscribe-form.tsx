@@ -13,7 +13,7 @@ export default function SubscribeForm() {
 	return (
 		<>
 			<Typography variant="h5" classes={{ root: classes.root }}>
-				*Subscription In Progress*
+				*Subscription Form In Progress*
 			</Typography>
 		</>
 	);

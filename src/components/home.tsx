@@ -1,17 +1,15 @@
 import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import HomeMainCardBackground from '../images/home-maincard-background.jpg';
-
-export interface IPageProps {
-	theme: Theme;
-	navigateToPage: (page: string) => void;
-}
+import { IPageProps } from '../App';
 
 const useStyles = makeStyles((theme) => ({
 	valuePropTextRoot: {
-		color: theme.palette.text.primary,
+		color: 'theme.palette.text.main',
 		fontSize: '4.2rem',
 		fontWeight: 'bold',
 	},
@@ -33,15 +31,29 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function HomePage(props: IPageProps) {
+export default function Home(props: IPageProps) {
 	const classes = useStyles();
 
 	return (
 		<>
 			<Paper classes={{ root: classes.homePaperRoot }}>
-				<Typography variant="h3" classes={{ root: classes.valuePropTextRoot }}>
-					Let's be human together
-				</Typography>
+				<Grid justify="center" container>
+					<Grid item>
+						<Typography
+							component="span"
+							variant="h3"
+							classes={{ root: classes.valuePropTextRoot }}
+						>
+							Let's be human together
+						</Typography>
+					</Grid>
+					<Grid item>
+						<Button>BUTTON A</Button>
+					</Grid>
+					<Grid item>
+						<Button>BUTTON B</Button>
+					</Grid>
+				</Grid>
 			</Paper>
 		</>
 	);

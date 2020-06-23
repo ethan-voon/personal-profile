@@ -3,4 +3,5 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(<App placeholder={''} />, document.getElementById('app'));
+const doc = document.getElementById('app');
+ReactDOM.render(<App />, doc);

@@ -5,8 +5,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Footer from './components/footer';
 import Header from './components/header';
-import HomePage from './components/home-page';
-import { PageTitles } from './pages';
+import NavTabs from './components/tabs';
+
+export interface IAppProps {}
+export interface IPageProps {
+	theme: Theme;
+}
 
 const useStyles = makeStyles((theme) => ({
 	offset: theme.mixins.toolbar,
@@ -15,10 +19,12 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 	},
+	active: {
+		backgroundColor: '#0099FF',
+	},
 }));
 
-export default function App(props: any) {
-	// Themeing
+export default function App(props: IAppProps) {
 	const [themeState, setTheme] = useState(createMuiTheme({ palette: { type: 'dark' } }));
 	const classes = useStyles();
 
@@ -40,6 +46,18 @@ export default function App(props: any) {
 		palette: {
 			type: isDarkTheme(themeState) ? 'dark' : 'light',
 			divider: isDarkTheme(themeState) ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
+			background: {
+				default: isDarkTheme(themeState) ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
+			},
+			primary: {
+				main: '#6c4d6f',
+			},
+			secondary: {
+				main: '#9fb199',
+			},
+			text: {
+				primary: isDarkTheme(themeState) ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
+			},
 		},
 		typography: {
 			fontFamily: [
@@ -57,31 +75,19 @@ export default function App(props: any) {
 		},
 	});
 
-	// Navigation
-	const [, setPage] = useState(PageTitles.Home); // TODO choose page based on url parameter
-
-	const navigateToPage = (page: string) => {
-		setPage(page);
-	};
-
 	return (
 		<>
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
 				<div className={classes.root}>
-					<div className={classes.offset} />
-					<div className={classes.offset} />
 					<Grid container alignItems="center" alignContent="center" justify="center">
 						<Grid xs={11} item>
-							<Header
-								theme={themeState}
-								isDarkTheme={isDarkTheme}
-								toggleTheme={toggleTheme}
-							/>
+							<Header {...props} theme={themeState} toggleTheme={toggleTheme} />
 						</Grid>
 						<Grid xs={11} item>
-							<HomePage theme={themeState} navigateToPage={navigateToPage} />
+							<NavTabs theme={themeState} />
 						</Grid>
+						<Grid xs={11} item></Grid>
 						<Grid item>
 							<Footer />
 						</Grid>
