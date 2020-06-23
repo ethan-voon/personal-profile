@@ -6,18 +6,14 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import HomeMainCardBackground from '../images/home-maincard-background.jpg';
 import { IPageProps } from '../App';
+import SubscribeForm from './subscribe-form';
 
 const useStyles = makeStyles((theme) => ({
-	valuePropTextRoot: {
-		color: 'theme.palette.text.main',
-		fontSize: '4.2rem',
-		fontWeight: 'bold',
-	},
 	homePaperRoot: {
 		display: 'flex',
 		flexDirection: 'column',
 		backgroundImage: `url(${HomeMainCardBackground})`,
-		backgroundAttachment: 'fixed',
+		backgroundColor: theme.palette.background.default,
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
 		backgroundRepeat: 'no-repeat',
@@ -25,9 +21,19 @@ const useStyles = makeStyles((theme) => ({
 		flexWrap: 'wrap',
 		overflow: 'hidden',
 		textAlign: 'center',
-		padding: '15%',
-		height: 1000,
+		padding: '10%',
+		minHeight: 800,
 		width: '100%',
+	},
+	valuePropTextRoot: {
+		color: 'theme.palette.text.main',
+		fontSize: '4.2rem',
+		fontWeight: 'bold',
+		paddingTop: '1000px',
+	},
+	offset: {
+		height: '65px',
+		backgroundColor: 'transparent',
 	},
 }));
 
@@ -36,9 +42,16 @@ export default function Home(props: IPageProps) {
 
 	return (
 		<>
-			<Paper classes={{ root: classes.homePaperRoot }}>
-				<Grid justify="center" container>
-					<Grid item>
+			<Paper component="span" classes={{ root: classes.homePaperRoot }}>
+				<Grid
+					component="span"
+					justify="center"
+					alignItems="center"
+					alignContent="center"
+					container
+				>
+					<Grid component="span" xs={12} classes={{ root: classes.offset }} item />
+					<Grid component="span" xs={12} item>
 						<Typography
 							component="span"
 							variant="h3"
@@ -47,11 +60,14 @@ export default function Home(props: IPageProps) {
 							Let's be human together
 						</Typography>
 					</Grid>
-					<Grid item>
+					<Grid component="span" item>
 						<Button>BUTTON A</Button>
 					</Grid>
-					<Grid item>
+					<Grid component="span" item>
 						<Button>BUTTON B</Button>
+					</Grid>
+					<Grid component="span" xs={12} item>
+						<SubscribeForm />
 					</Grid>
 				</Grid>
 			</Paper>

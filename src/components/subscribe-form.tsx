@@ -12,7 +12,7 @@ export default function SubscribeForm() {
 	const classes = useStyles();
 	return (
 		<>
-			<Typography variant="h5" classes={{ root: classes.root }}>
+			<Typography component="span" variant="h5" classes={{ root: classes.root }}>
 				*Subscription Form In Progress*
 			</Typography>
 		</>

@@ -11,7 +11,7 @@
 		"checkJs": true,
 		"typeRoots": ["./typings", "./node_modules/@types"],
 		"noEmit": true,
-		"noUnusedLocals": true,
+		"noUnusedLocals": false,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitThis": true,
 		"forceConsistentCasingInFileNames": true,

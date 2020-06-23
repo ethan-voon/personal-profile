@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: '4.2rem',
 		fontWeight: 'bold',
 	},
-	aboutPaperRoot: {
+	supportPaperRoot: {
 		display: 'flex',
 		flexDirection: 'column',
 		backgroundImage: `url(${HomeMainCardBackground})`,
@@ -29,18 +29,18 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function About(props: IPageProps) {
+export default function Support(props: IPageProps) {
 	const classes = useStyles();
 
 	return (
 		<>
-			<Paper component="span" classes={{ root: classes.aboutPaperRoot }}>
+			<Paper component="span" classes={{ root: classes.supportPaperRoot }}>
 				<Typography
 					component="span"
 					variant="h3"
 					classes={{ root: classes.valuePropTextRoot }}
 				>
-					*Some Text About Me*
+					*Support Links*
 				</Typography>
 			</Paper>
 		</>

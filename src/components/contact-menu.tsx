@@ -27,8 +27,8 @@ export default function ContactMenu(props: any) {
 	const classes = useStyles();
 
 	return (
-		<Grid justify="flex-end" alignItems="center" spacing={4} container>
-			<Grid item>
+		<Grid component="span" justify="space-between" alignItems="center" spacing={4} container>
+			<Grid component="span" item>
 				<Typography>
 					<Link
 						href="mailto:epvoon@gmail.com"
@@ -38,14 +38,14 @@ export default function ContactMenu(props: any) {
 					</Link>
 				</Typography>
 			</Grid>
-			<Grid item>
+			<Grid component="span" item>
 				<Typography>
 					<Link href="tel:3604815632" classes={{ root: classes.contactLinkRoot }}>
 						360-481-5632
 					</Link>
 				</Typography>
 			</Grid>
-			<Grid item>
+			<Grid component="span" item>
 				<MyFacebook />
 				<IconButton href="https://twitter.com/EthanVoon">
 					<TwitterIcon />

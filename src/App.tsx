@@ -4,7 +4,7 @@ import { createMuiTheme, MuiThemeProvider, Theme, makeStyles } from '@material-u
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Footer from './components/footer';
-import Header from './components/header';
+// import Header from './components/header';
 import NavTabs from './components/tabs';
 
 export interface IAppProps {}
@@ -79,20 +79,26 @@ export default function App(props: IAppProps) {
 		<>
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
-				<div className={classes.root}>
-					<Grid container alignItems="center" alignContent="center" justify="center">
-						<Grid xs={11} item>
+				<span className={classes.root}>
+					<Grid
+						container
+						component="span"
+						alignItems="center"
+						alignContent="center"
+						justify="center"
+					>
+						{/* <Grid xs={11} component="span" item>
 							<Header {...props} theme={themeState} toggleTheme={toggleTheme} />
-						</Grid>
-						<Grid xs={11} item>
+						</Grid> */}
+						<Grid xs={11} component="span" item>
 							<NavTabs theme={themeState} />
 						</Grid>
-						<Grid xs={11} item></Grid>
-						<Grid item>
+						<Grid xs={11} component="span" item></Grid>
+						<Grid component="span" item>
 							<Footer />
 						</Grid>
 					</Grid>
-				</div>
+				</span>
 			</MuiThemeProvider>
 		</>
 	);
