@@ -9,7 +9,7 @@ import { IPageProps } from '../App';
 import Home from './home';
 import About from './about';
 import Support from './support';
-import HomeMainCardBackground from '../images/home-maincard-background.jpg';
+import Background from '../images/background-moon-mountain-forest.jpg';
 import Container from '@material-ui/core/Container/Container';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 	},
 	tabPanelRoot: {
 		display: 'flex',
-		backgroundImage: `url(${HomeMainCardBackground})`,
+		backgroundImage: `url(${Background})`,
 		backgroundColor: theme.palette.background.default,
 		backgroundAttachment: 'fixed',
 		backgroundOrigin: 'border-box',
