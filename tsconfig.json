@@ -1,27 +1,38 @@
 {
-	"compilerOptions": {
-		"outDir": "./dist/",
-		"sourceMap": true,
-		"module": "esNext",
-		"jsx": "react",
-		"target": "esnext",
-		"lib": ["es2017.object", "es2016.array.include", "es6", "dom"],
-		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true,
-		"checkJs": true,
-		"typeRoots": ["./typings", "./node_modules/@types"],
-		"noEmit": true,
-		"noUnusedLocals": false,
-		"noFallthroughCasesInSwitch": true,
-		"noImplicitThis": true,
-		"forceConsistentCasingInFileNames": true,
-		"noImplicitReturns": true,
-		"skipLibCheck": true,
-		"allowJs": true,
-		"esModuleInterop": true,
-		"strict": true,
-		"resolveJsonModule": true,
-		"isolatedModules": true
-	},
-	"include": ["./src/"]
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "module": "esNext",
+    "jsx": "react",
+    "target": "esnext",
+    "lib": [
+      "es2017.object",
+      "es2016.array.include",
+      "es6",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types"
+    ],
+    "noEmit": true,
+    "noUnusedLocals": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "./src/"
+  ]
 }

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -10,21 +12,19 @@ import Home from './home';
 import About from './about';
 import Support from './support';
 import Background from '../images/background-moon-mountain-forest.jpg';
-import Container from '@material-ui/core/Container/Container';
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
+import Container from '@material-ui/core/Container';
 
-interface TabPanelProps {
-	children?: React.ReactNode;
-	index: any;
-	value: any;
-	classes: any;
-}
-
-interface LinkTabProps {
+export interface LinkTabProps {
 	label?: string;
 	href?: string;
 	theme: Theme;
+}
+
+export interface TabPanelProps {
+	children: any;
+	value: number;
+	index: number;
+	classes: any;
 }
 
 function a11yProps(index: any) {
@@ -68,16 +68,16 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 function TabPanel(props: TabPanelProps) {
 	const { children, value, index, classes, ...other } = props;
-
+	const shouldDisplay = value === index;
 	return (
 		<span
 			role="tabpanel"
-			hidden={value !== index}
+			hidden={!shouldDisplay}
 			id={`nav-tabpanel-${index}`}
 			aria-labelledby={`nav-tab-${index}`}
 			{...other}
 		>
-			{value === index && (
+			{shouldDisplay && (
 				<Container classes={{ root: classes.tabPanelRoot }}>{children}</Container>
 			)}
 		</span>
@@ -98,10 +98,11 @@ function LinkTab(props: LinkTabProps) {
 	);
 }
 
+// TODO wrap NavTabs with route, e.g. export default withRouter(NavTabs)
 export default function NavTabs(props: IPageProps) {
 	const { theme } = props;
 	const classes = useStyles();
-	const [value, setValue] = React.useState(0);
+	const [value, setValue] = useState(0);
 
 	const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
 		setValue(newValue);

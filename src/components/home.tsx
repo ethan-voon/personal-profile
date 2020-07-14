@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button/Button';
 import Typography from '@material-ui/core/Typography';
 import { IPageProps } from '../App';
 import SubscribeForm from './subscribe-form';
@@ -20,11 +19,12 @@ export default function Home(props: IPageProps) {
 	return (
 		<>
 			<Grid
+				container
 				component="span"
 				justify="center"
 				alignItems="center"
 				alignContent="center"
-				container
+				spacing={3}
 			>
 				<Grid component="span" xs={12} item>
 					<Typography
@@ -34,12 +34,6 @@ export default function Home(props: IPageProps) {
 					>
 						Let's be human together
 					</Typography>
-				</Grid>
-				<Grid component="span" item>
-					<Button>BUTTON A</Button>
-				</Grid>
-				<Grid component="span" item>
-					<Button>BUTTON B</Button>
 				</Grid>
 				<Grid component="span" xs={12} item>
 					<SubscribeForm />
