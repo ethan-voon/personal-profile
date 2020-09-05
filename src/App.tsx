@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { PaletteType } from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider, Theme, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
 import Footer from './components/footer';
-import NavTabs from './components/tabs';
+import Header from './components/header';
+import Home from './components/home';
 
 export interface IAppProps {}
 export interface IPageProps {
@@ -13,49 +13,33 @@ export interface IPageProps {
 }
 
 const useStyles = makeStyles((theme) => ({
-	offset: theme.mixins.toolbar,
-	root: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
+	appBar: {
+		background: 'transparent',
+		boxShadow: 'none',
+		width: '100%',
 	},
-	active: {
-		backgroundColor: '#0099FF',
+	headerTitle: {
+		marginLeft: '20px',
+		paddingTop: '2%',
+		paddingBottom: '2%',
 	},
 }));
 
 export default function App(props: IAppProps) {
-	const [themeState, setTheme] = useState(createMuiTheme({ palette: { type: 'dark' } }));
+	const [prefersDarkTheme, setPreferredTheme] = useState(false);
 
 	const toggleTheme = () => {
-		setTheme({
-			...themeState,
-			palette: {
-				...themeState.palette,
-				type: (isDarkTheme(themeState) ? 'light' : 'dark') as PaletteType,
-			},
-		});
-	};
-
-	const isDarkTheme = (theme: Theme) => {
-		return theme.palette.type === ('dark' as PaletteType);
+		setPreferredTheme(!prefersDarkTheme);
 	};
 
 	const theme: Theme = createMuiTheme({
 		palette: {
-			type: isDarkTheme(themeState) ? 'dark' : 'light',
-			divider: isDarkTheme(themeState) ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
-			background: {
-				default: isDarkTheme(themeState) ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
-			},
+			type: prefersDarkTheme ? 'dark' : 'light',
 			primary: {
-				main: '#6c4d6f',
+				main: '#75b79e',
 			},
 			secondary: {
-				main: '#9fb199',
-			},
-			text: {
-				primary: isDarkTheme(themeState) ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
+				main: '#6a8caf',
 			},
 		},
 		typography: {
@@ -74,29 +58,20 @@ export default function App(props: IAppProps) {
 		},
 	});
 
-	const classes = useStyles();
+	const classes = useStyles(theme);
 
 	return (
 		<>
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
-				<span className={classes.root}>
-					<Grid
-						container
-						component="span"
-						alignItems="center"
-						alignContent="center"
-						justify="center"
-					>
-						<Grid xs={11} component="span" item>
-							<NavTabs theme={themeState} toggleTheme={toggleTheme} />
-						</Grid>
-						<Grid xs={11} component="span" item></Grid>
-						<Grid component="span" item>
-							<Footer />
-						</Grid>
-					</Grid>
-				</span>
+				<AppBar position="sticky" classes={{ root: classes.appBar }} elevation={12}>
+					<Header theme={theme} toggleTheme={toggleTheme} />
+				</AppBar>
+				{
+					// TODO add routing
+				}
+				<Home theme={theme} toggleTheme={toggleTheme} />
+				<Footer />
 			</MuiThemeProvider>
 		</>
 	);

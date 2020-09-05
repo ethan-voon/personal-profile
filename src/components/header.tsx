@@ -15,14 +15,13 @@ interface IHeaderProps extends IPageProps {
 
 const useStyles = makeStyles((theme) => ({
 	cardRoot: {
-		background: theme.palette.background.default,
 		display: 'flex',
 		flexGrow: 1,
 		justifyContent: 'center',
 		height: '10%',
 		padding: '2%',
 	},
-	headerTitleRoot: {
+	headerTitle: {
 		color: theme.palette.text.primary,
 	},
 	switchRoot: {
@@ -36,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header(props: IHeaderProps) {
-	const { theme, toggleTheme } = props;
-	const classes = useStyles();
+	const { theme, toggleTheme, ...rest } = props;
+	const classes = useStyles(theme);
 	return (
 		<>
 			<Card classes={{ root: classes.cardRoot }} elevation={12}>
@@ -47,7 +46,7 @@ export default function Header(props: IHeaderProps) {
 							<Typography
 								variant="h3"
 								align="left"
-								classes={{ root: classes.headerTitleRoot }}
+								classes={{ root: classes.headerTitle }}
 								noWrap
 							>
 								Ethan Voon
@@ -65,7 +64,7 @@ export default function Header(props: IHeaderProps) {
 								root: classes.switchRoot,
 								track: classes.switchTrack,
 							}}
-							{...props}
+							{...rest}
 						/>
 					</Grid>
 				</Grid>

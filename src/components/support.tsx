@@ -30,7 +30,7 @@ export default function Support(props: IPageProps) {
 						variant="h3"
 						classes={{ root: classes.valuePropTextRoot }}
 					>
-						*Support Links*
+						*TODO Support Links*
 					</Typography>
 				</Grid>
 			</Grid>
