@@ -2,13 +2,36 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { IPageProps } from '../App';
-import Grid from '@material-ui/core/Grid/Grid';
+import { Card, CardContent } from '@material-ui/core';
+import Background from '../images/Moon.png';
 
 const useStyles = makeStyles((theme) => ({
-	valuePropTextRoot: {
-		color: 'theme.palette.text.main',
-		fontSize: '4.2rem',
-		fontWeight: 'bold',
+	pageCard: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignContent: 'center',
+		alignItems: 'center',
+		justifyContent: 'center',
+		width: '98%',
+		margin: '20px',
+		borderRadius: '0',
+		backgroundColor: 'rgb(256, 256, 256, 0.6)',
+	},
+	root: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		// alignContent: 'center',
+		alignSelf: 'center',
+		alignText: 'center',
+		justifyContent: 'center',
+		width: '100%',
+		minHeight: '500px',
+		backgroundImage: 'url(' + Background + ')',
+		backgroundAttachment: 'fixed',
+		backgroundPosition: 'center',
+		backgroundRepeat: 'no-repeat',
+		backgroundSize: 'cover',
 	},
 }));
 
@@ -17,23 +40,19 @@ export default function Support(props: IPageProps) {
 
 	return (
 		<>
-			<Grid
-				component="span"
-				justify="center"
-				alignItems="center"
-				alignContent="center"
-				container
-			>
-				<Grid component="span" xs={12} item>
-					<Typography
-						component="span"
-						variant="h3"
-						classes={{ root: classes.valuePropTextRoot }}
-					>
-						*TODO Support Links*
-					</Typography>
-				</Grid>
-			</Grid>
+			<span className={classes.root}>
+				<Card component={'span'} classes={{ root: classes.pageCard }}>
+					<CardContent>
+						<Typography variant="h4" align="center">
+							<a href="https://commsol.cc">Community Solutions</a>
+						</Typography>
+						<br />
+						<Typography variant="h5" align="center">
+							More Coming Soon!
+						</Typography>
+					</CardContent>
+				</Card>
+			</span>
 		</>
 	);
 }

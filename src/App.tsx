@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AppBar } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider, Theme, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Footer from './components/footer';
 import Header from './components/header';
 import Home from './components/home';
+import About from './components/about';
+import Support from './components/support';
+import Blog from './components/blog';
 
 export interface IAppProps {}
 export interface IPageProps {
 	theme: Theme;
-	toggleTheme?: () => void;
 }
 
 const useStyles = makeStyles((theme) => ({
-	appBar: {
+	topAppBar: {
 		background: 'transparent',
-		boxShadow: 'none',
-		width: '100%',
+		color: 'transparent',
+	},
+	bottomAppBar: {
+		top: 'auto',
+		bottom: 0,
+		color: 'transparent',
+		background: 'transparent',
 	},
 	headerTitle: {
 		marginLeft: '20px',
@@ -26,15 +34,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function App(props: IAppProps) {
-	const [prefersDarkTheme, setPreferredTheme] = useState(false);
-
-	const toggleTheme = () => {
-		setPreferredTheme(!prefersDarkTheme);
-	};
-
 	const theme: Theme = createMuiTheme({
 		palette: {
-			type: prefersDarkTheme ? 'dark' : 'light',
 			primary: {
 				main: '#75b79e',
 			},
@@ -62,17 +63,38 @@ export default function App(props: IAppProps) {
 
 	return (
 		<>
-			<MuiThemeProvider theme={theme}>
-				<CssBaseline />
-				<AppBar position="sticky" classes={{ root: classes.appBar }} elevation={12}>
-					<Header theme={theme} toggleTheme={toggleTheme} />
-				</AppBar>
-				{
-					// TODO add routing
-				}
-				<Home theme={theme} toggleTheme={toggleTheme} />
-				<Footer />
-			</MuiThemeProvider>
+			<Router>
+				<MuiThemeProvider theme={theme}>
+					<CssBaseline />
+					<AppBar position="sticky" classes={{ root: classes.topAppBar }} elevation={12}>
+						<Header theme={theme} />
+					</AppBar>
+					<Switch>
+						<Route path="/home">
+							<Home theme={theme} />
+						</Route>
+						<Route path="/about">
+							<About theme={theme} />
+						</Route>
+						<Route path="/blog">
+							<Blog theme={theme} />
+						</Route>
+						<Route path="/support">
+							<Support theme={theme} />
+						</Route>
+						<Route exact path="/">
+							<Home theme={theme} />
+						</Route>
+					</Switch>
+					<AppBar
+						position="sticky"
+						classes={{ root: classes.bottomAppBar }}
+						elevation={12}
+					>
+						<Footer />
+					</AppBar>
+				</MuiThemeProvider>
+			</Router>
 		</>
 	);
 }

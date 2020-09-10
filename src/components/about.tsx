@@ -7,25 +7,43 @@ import AboutMarkdown from '../content/about.md';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Background from '../images/Moon.png';
 
 const useStyles = makeStyles((theme) => ({
-	cardRoot: {
+	pageCard: {
 		display: 'flex',
 		flexDirection: 'column',
 		alignContent: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: 'rgba(0, 0, 0, 0.4)',
+		margin: '20px',
+		borderRadius: '0',
+		backgroundColor: 'rgb(256, 256, 256, 0.6)',
 	},
 	portraitCardRoot: {
 		marginTop: '24px',
 		objectFit: 'cover',
 		height: '300px',
 		width: '225px',
+		padding: '10px',
 	},
 	aboutTextRoot: {
 		color: 'theme.palette.text.main',
 		fontSize: '1.2rem',
+	},
+	root: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		alignContent: 'center',
+		alignSelf: 'center',
+		justifyContent: 'center',
+		width: '100%',
+		backgroundImage: 'url(' + Background + ')',
+		backgroundAttachment: 'fixed',
+		backgroundPosition: 'center',
+		backgroundRepeat: 'no-repeat',
+		backgroundSize: 'cover',
 	},
 }));
 
@@ -42,16 +60,18 @@ export default function About(props: IPageProps) {
 
 	return (
 		<>
-			<Card component={'span'} classes={{ root: classes.cardRoot }}>
-				<CardMedia
-					className={classes.portraitCardRoot}
-					image={MyPortrait}
-					title="My Portrait"
-				/>
-				<CardContent>
-					<ReactMarkdown source={markdown} className={classes.aboutTextRoot} />
-				</CardContent>
-			</Card>
+			<span className={classes.root}>
+				<Card component={'span'} classes={{ root: classes.pageCard }}>
+					<CardMedia
+						className={classes.portraitCardRoot}
+						image={MyPortrait}
+						title="My Portrait"
+					/>
+					<CardContent>
+						<ReactMarkdown source={markdown} className={classes.aboutTextRoot} />
+					</CardContent>
+				</Card>
+			</span>
 		</>
 	);
 }

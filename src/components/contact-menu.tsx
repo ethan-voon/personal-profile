@@ -27,7 +27,7 @@ export default function ContactMenu(props: any) {
 	const classes = useStyles();
 
 	return (
-		<Grid component="span" justify="center" alignItems="center" spacing={3} container>
+		<Grid component="span" justify="center" alignItems="center" spacing={1} container>
 			<Grid component="span" item>
 				<Typography>
 					<Link

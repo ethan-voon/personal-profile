@@ -1,38 +1,28 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "module": "esNext",
-    "jsx": "react",
-    "target": "esnext",
-    "lib": [
-      "es2017.object",
-      "es2016.array.include",
-      "es6",
-      "dom"
-    ],
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "checkJs": true,
-    "typeRoots": [
-      "./typings",
-      "./node_modules/@types"
-    ],
-    "noEmit": true,
-    "noUnusedLocals": false,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitThis": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true
-  },
-  "include": [
-    "./src/"
-  ]
+	"compilerOptions": {
+		"sourceMap": true,
+		"module": "esNext",
+		"jsx": "react",
+		"target": "esnext",
+		"lib": ["es2017.object", "es2016.array.include", "es6", "dom"],
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"checkJs": true,
+		"typeRoots": ["./typings", "./node_modules/@types"],
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitThis": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"noImplicitAny": false,
+		"skipLibCheck": true,
+		"allowJs": true,
+		"esModuleInterop": true,
+		"strict": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true
+	},
+	"include": ["./src/"],
+	"no-use-before-define": "off",
+	"@typescript-eslint/no-use-before-define": ["error"]
 }
