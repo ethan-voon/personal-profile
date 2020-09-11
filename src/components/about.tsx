@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactMarkdown from 'react-markdown';
-import { IPageProps } from '../App';
-import MyPortrait from '../images/my-portrait.jpg';
-import AboutMarkdown from '../content/about.md';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Background from '../images/Moon.png';
+import { IPageProps, theme } from '../App';
+import MyPortrait from '../images/my-portrait.jpg';
+import AboutMarkdown from '../content/about.md';
 
 const useStyles = makeStyles((theme) => ({
 	pageCard: {
@@ -31,24 +30,10 @@ const useStyles = makeStyles((theme) => ({
 		color: 'theme.palette.text.main',
 		fontSize: '1.2rem',
 	},
-	root: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		alignContent: 'center',
-		alignSelf: 'center',
-		justifyContent: 'center',
-		width: '100%',
-		backgroundImage: 'url(' + Background + ')',
-		backgroundAttachment: 'fixed',
-		backgroundPosition: 'center',
-		backgroundRepeat: 'no-repeat',
-		backgroundSize: 'cover',
-	},
 }));
 
 export default function About(props: IPageProps) {
-	const classes = useStyles();
+	const classes = useStyles(theme);
 	const [markdown, setMarkdown] = useState('');
 	useEffect(() => {
 		const fetchMarkdown = async () => {
@@ -60,18 +45,16 @@ export default function About(props: IPageProps) {
 
 	return (
 		<>
-			<span className={classes.root}>
-				<Card component={'span'} classes={{ root: classes.pageCard }}>
-					<CardMedia
-						className={classes.portraitCardRoot}
-						image={MyPortrait}
-						title="My Portrait"
-					/>
-					<CardContent>
-						<ReactMarkdown source={markdown} className={classes.aboutTextRoot} />
-					</CardContent>
-				</Card>
-			</span>
+			<Card component={'span'} classes={{ root: classes.pageCard }}>
+				<CardMedia
+					className={classes.portraitCardRoot}
+					image={MyPortrait}
+					title="My Portrait"
+				/>
+				<CardContent>
+					<ReactMarkdown source={markdown} className={classes.aboutTextRoot} />
+				</CardContent>
+			</Card>
 		</>
 	);
 }

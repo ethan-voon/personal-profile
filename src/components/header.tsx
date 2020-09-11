@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { IPageProps } from '../App';
 import { Card } from '@material-ui/core';
+import { IPageProps, theme } from '../App';
 
 interface IHeaderProps extends IPageProps {}
 
@@ -24,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header(props: IHeaderProps) {
-	const { theme } = props;
 	const classes = useStyles(theme);
 
 	return (

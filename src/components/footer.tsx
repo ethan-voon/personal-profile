@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import ContactMenu from './contact-menu';
 import { Card } from '@material-ui/core';
+import { theme } from '../App';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Footer() {
-	const classes = useStyles();
+	const classes = useStyles(theme);
 
 	return (
 		<>

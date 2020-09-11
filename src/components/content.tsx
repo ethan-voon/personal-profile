@@ -19,7 +19,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Content(props: IPageProps) {
 	const classes = useStyles();
 
-	// TODO see /about for markdown implementation
+	//	TODO see /about for markdown implementation
+	//	Potential content:
+	//		Writing
+	//		Music
+	//		Code
 	return (
 		<>
 			<Card component={'span'} classes={{ root: classes.pageCard }}>

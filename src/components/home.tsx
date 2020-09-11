@@ -4,8 +4,7 @@ import { Grid, Card, CardContent, CardActions } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import $ from 'jquery';
-import { IPageProps } from '../App';
-import Background from '../images/Moon.png';
+import { IPageProps, theme } from '../App';
 
 const useStyles = makeStyles((theme) => ({
 	cardActions: {
@@ -20,20 +19,6 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius: '0',
 		backgroundColor: 'rgb(256, 256, 256, 0.6)',
 	},
-	root: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		alignContent: 'center',
-		alignSelf: 'center',
-		justifyContent: 'center',
-		width: '100%',
-		backgroundImage: 'url(' + Background + ')',
-		backgroundAttachment: 'fixed',
-		backgroundPosition: 'center',
-		backgroundRepeat: 'no-repeat',
-		backgroundSize: 'cover',
-	},
 	text: {
 		opacity: '1',
 		background: 'transparent',
@@ -41,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Home(props: IPageProps) {
-	const classes = useStyles();
+	const classes = useStyles(theme);
 
 	// For ConvertKit integration
 	useEffect(() => {
@@ -62,48 +47,46 @@ export default function Home(props: IPageProps) {
 
 	return (
 		<>
-			<span className={classes.root}>
-				<Grid container component="span" alignItems="center" justify="center">
-					<Grid xs={12} component="span" item>
-						<Link to="/about" style={{ textDecoration: 'none' }}>
-							<Card classes={{ root: classes.navCard }} elevation={12}>
-								<Typography variant={'h4'}>About Me</Typography>
-							</Card>
-						</Link>
-					</Grid>
-					<Grid xs={12} component="span" item>
+			<Grid container component="span" alignItems="center" justify="center">
+				<Grid xs={12} component="span" item>
+					<Link to="/about" style={{ textDecoration: 'none' }}>
 						<Card classes={{ root: classes.navCard }} elevation={12}>
-							<Grid
-								container
-								alignItems="center"
-								alignContent="center"
-								justify="center"
-								style={{ textAlign: 'center' }}
-							>
-								<Grid xs={12} component="span" item>
-									<CardContent>
-										<Typography variant={'h4'}>
-											Want to know when I create content?
-										</Typography>
-									</CardContent>
-								</Grid>
-								<Grid xs={12} component="span" item>
-									<CardActions classes={{ root: classes.cardActions }}>
-										<script async data-uid="6b652f3c27" />
-									</CardActions>
-								</Grid>
-							</Grid>
+							<Typography variant={'h4'}>About Me</Typography>
 						</Card>
-					</Grid>
-					<Grid xs={12} component="span" item>
-						<Link to="/support" style={{ textDecoration: 'none' }}>
-							<Card classes={{ root: classes.navCard }} elevation={12}>
-								<Typography variant={'h4'}>Support</Typography>
-							</Card>
-						</Link>
-					</Grid>
+					</Link>
 				</Grid>
-			</span>
+				<Grid xs={12} component="span" item>
+					<Card classes={{ root: classes.navCard }} elevation={12}>
+						<Grid
+							container
+							alignItems="center"
+							alignContent="center"
+							justify="center"
+							style={{ textAlign: 'center' }}
+						>
+							<Grid xs={12} component="span" item>
+								<CardContent>
+									<Typography variant={'h4'}>
+										Want to know when I create content?
+									</Typography>
+								</CardContent>
+							</Grid>
+							<Grid xs={12} component="span" item>
+								<CardActions classes={{ root: classes.cardActions }}>
+									<script async data-uid="6b652f3c27" />
+								</CardActions>
+							</Grid>
+						</Grid>
+					</Card>
+				</Grid>
+				<Grid xs={12} component="span" item>
+					<Link to="/support" style={{ textDecoration: 'none' }}>
+						<Card classes={{ root: classes.navCard }} elevation={12}>
+							<Typography variant={'h4'}>Support</Typography>
+						</Card>
+					</Link>
+				</Grid>
+			</Grid>
 		</>
 	);
 }
