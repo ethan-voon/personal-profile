@@ -83,23 +83,21 @@ export default function App(props: IAppProps) {
 					<Header />
 				</AppBar>
 				<span className={classes.pageWrapper}>
-					<Switch>
-						<Route path="/home">
-							<Home />
-						</Route>
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/blog">
-							<Blog />
-						</Route>
-						<Route path="/support">
-							<Support />
-						</Route>
-						<Route exact path="/">
-							<Home />
-						</Route>
-					</Switch>
+					<Route path="/home">
+						<Home />
+					</Route>
+					<Route path="/about">
+						<About />
+					</Route>
+					<Route path="/blog">
+						<Blog />
+					</Route>
+					<Route path="/support">
+						<Support />
+					</Route>
+					<Route exact path="/">
+						<Home />
+					</Route>
 				</span>
 				<AppBar position="sticky" classes={{ root: classes.bottomAppBar }} elevation={12}>
 					<Footer />
