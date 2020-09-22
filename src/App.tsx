@@ -9,7 +9,7 @@ import Home from './components/home';
 import About from './components/about';
 import Support from './components/support';
 import Blog from './components/blog';
-import Background from './images/Moon.png';
+import Background from './images/moon.png';
 
 export interface IAppProps {}
 export interface IPageProps {}
