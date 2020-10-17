@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function Blog(props: IPageProps) {
+export default function PublicJournal(props: IPageProps) {
 	const classes = useStyles();
 
 	// TODO see /about for markdown implementation

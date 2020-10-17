@@ -44,7 +44,6 @@ export default function Header(props: IHeaderProps) {
 							variant="subtitle1"
 							align="center"
 							classes={{ root: classes.headerTitle }}
-							noWrap
 						>
 							On a quest to design humane systems for community, education, and data.
 						</Typography>

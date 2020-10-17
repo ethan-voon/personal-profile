@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { AppBar } from '@material-ui/core';
-import { createMuiTheme, MuiThemeProvider, Theme, makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Footer from './components/footer';
 import Header from './components/header';
 import Home from './components/home';
 import About from './components/about';
 import Support from './components/support';
-import Blog from './components/blog';
+import PublicJournal from './components/public-journal';
 import Background from './images/moon.png';
 
 export interface IAppProps {}
@@ -46,12 +46,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 	bottomAppBar: {
 		top: 'auto',
-		bottom: 0,
+		bottom: '0',
 		color: 'transparent',
 		background: 'transparent',
 	},
 	headerTitle: {
-		marginLeft: '20px',
 		paddingTop: '2%',
 		paddingBottom: '2%',
 	},
@@ -83,23 +82,25 @@ export default function App(props: IAppProps) {
 					<Header />
 				</AppBar>
 				<span className={classes.pageWrapper}>
-					<Route path="/home">
-						<Home />
-					</Route>
-					<Route path="/about">
-						<About />
-					</Route>
-					<Route path="/blog">
-						<Blog />
-					</Route>
-					<Route path="/support">
-						<Support />
-					</Route>
-					<Route exact path="/">
-						<Home />
-					</Route>
+					<Switch>
+						<Route path="/home">
+							<Home />
+						</Route>
+						<Route path="/about">
+							<About />
+						</Route>
+						<Route path="/blog">
+							<PublicJournal />
+						</Route>
+						<Route path="/support">
+							<Support />
+						</Route>
+						<Route exact path="/">
+							<Home />
+						</Route>
+					</Switch>
 				</span>
-				<AppBar position="sticky" classes={{ root: classes.bottomAppBar }} elevation={12}>
+				<AppBar position="sticky" classes={{ root: classes.bottomAppBar }} elevation={0} >
 					<Footer />
 				</AppBar>
 			</MuiThemeProvider>

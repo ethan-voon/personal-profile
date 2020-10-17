@@ -22,6 +22,20 @@ export function MyFacebook() {
 		</IconButton>
 	);
 }
+export function MyTwitter() {
+	return (
+		<IconButton href="https://twitter.com/EthanVoon">
+			<TwitterIcon />
+		</IconButton>
+	);
+}
+export function MyLinkedIn() {
+	return (
+		<IconButton href="https://www.linkedin.com/in/ethanvoon/">
+			<LinkedInIcon />
+		</IconButton>
+	);
+}
 
 export default function ContactMenu(props: any) {
 	const classes = useStyles();
@@ -47,12 +61,8 @@ export default function ContactMenu(props: any) {
 			</Grid>
 			<Grid component="span" item>
 				<MyFacebook />
-				<IconButton href="https://twitter.com/EthanVoon">
-					<TwitterIcon />
-				</IconButton>
-				<IconButton href="https://www.linkedin.com/in/ethanvoon/">
-					<LinkedInIcon />
-				</IconButton>
+				<MyTwitter />
+				<MyLinkedIn />
 			</Grid>
 		</Grid>
 	);
