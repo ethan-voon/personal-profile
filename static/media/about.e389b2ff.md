@@ -1,3 +1,5 @@
+# About Me
+
 Born in Visalia, CA and raised throughout the Pacific Northwest. Today you can find me in the ‘City of Subdued Excitement’ – Bellingham, WA. I share a home with my life partner, Ellie, and our _loud_ cattle dog, Indi. We are expecting our first baby to be born in October 2020!
 
 I was brought up in a house of music and continue to play whatever instrument I can get my hands on. Most often that ends up being a ukulele. If you want to get a feel for my musical taste, check out my [Spotify playlist](https://open.spotify.com/playlist/3ylNKwah8Zb31fs5jPDMnl?si=q9o0FbIcQsK37dSyB0Npzg) or my [SoundCloud](https://soundcloud.com/ethanvoon).
