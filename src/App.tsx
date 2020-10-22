@@ -10,6 +10,7 @@ import About from './components/about';
 import Support from './components/support';
 import PublicJournal from './components/public-journal';
 import Background from './images/moon.png';
+import Resume from './components/resume';
 
 export interface IAppProps {}
 export interface IPageProps {}
@@ -95,12 +96,15 @@ export default function App(props: IAppProps) {
 						<Route path="/support">
 							<Support />
 						</Route>
+						<Route path="/resume">
+							<Resume />
+						</Route>
 						<Route exact path="/">
 							<Home />
 						</Route>
 					</Switch>
 				</span>
-				<AppBar position="sticky" classes={{ root: classes.bottomAppBar }} elevation={0} >
+				<AppBar position="sticky" classes={{ root: classes.bottomAppBar }} elevation={0}>
 					<Footer />
 				</AppBar>
 			</MuiThemeProvider>

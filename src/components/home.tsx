@@ -51,7 +51,21 @@ export default function Home(props: IPageProps) {
 				<Grid xs={12} component="span" item>
 					<Link to="/about" style={{ textDecoration: 'none' }}>
 						<Card classes={{ root: classes.navCard }} elevation={12}>
-							<Typography variant={'h4'}>About Me</Typography>
+							<Typography variant={'h4'}>About</Typography>
+						</Card>
+					</Link>
+				</Grid>
+				<Grid xs={12} component="span" item>
+					<Link to="/resume" style={{ textDecoration: 'none' }}>
+						<Card classes={{ root: classes.navCard }} elevation={12}>
+							<Typography variant={'h4'}>Resume</Typography>
+						</Card>
+					</Link>
+				</Grid>
+				<Grid xs={12} component="span" item>
+					<Link to="/support" style={{ textDecoration: 'none' }}>
+						<Card classes={{ root: classes.navCard }} elevation={12}>
+							<Typography variant={'h4'}>Support</Typography>
 						</Card>
 					</Link>
 				</Grid>
@@ -78,13 +92,6 @@ export default function Home(props: IPageProps) {
 							</Grid>
 						</Grid>
 					</Card>
-				</Grid>
-				<Grid xs={12} component="span" item>
-					<Link to="/support" style={{ textDecoration: 'none' }}>
-						<Card classes={{ root: classes.navCard }} elevation={12}>
-							<Typography variant={'h4'}>Support</Typography>
-						</Card>
-					</Link>
 				</Grid>
 			</Grid>
 		</>

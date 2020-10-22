@@ -28,6 +28,11 @@ export default function Support(props: IPageProps) {
 					<Typography variant="h4" align="center">
 						<a href="https://commsol.cc">Community Solutions</a>
 					</Typography>
+					<Typography variant="caption" align="center">
+						A slow moving personal project aimed to build equitable systems for various
+						communities.
+					</Typography>
+					<br />
 					<br />
 					<Typography variant="h5" align="center">
 						More Coming Soon!
