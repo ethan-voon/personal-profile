@@ -56,16 +56,16 @@ export default function Home(props: IPageProps) {
 					</Link>
 				</Grid>
 				<Grid xs={12} component="span" item>
-					<Link to="/resume" style={{ textDecoration: 'none' }}>
+					<Link to="/projects" style={{ textDecoration: 'none' }}>
 						<Card classes={{ root: classes.navCard }} elevation={12}>
-							<Typography variant={'h4'}>Resume</Typography>
+							<Typography variant={'h4'}>Projects</Typography>
 						</Card>
 					</Link>
 				</Grid>
 				<Grid xs={12} component="span" item>
-					<Link to="/support" style={{ textDecoration: 'none' }}>
+					<Link to="/resume" style={{ textDecoration: 'none' }}>
 						<Card classes={{ root: classes.navCard }} elevation={12}>
-							<Typography variant={'h4'}>Support</Typography>
+							<Typography variant={'h4'}>Resume</Typography>
 						</Card>
 					</Link>
 				</Grid>

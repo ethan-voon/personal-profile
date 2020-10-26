@@ -7,7 +7,7 @@ import Footer from './components/footer';
 import Header from './components/header';
 import Home from './components/home';
 import About from './components/about';
-import Support from './components/support';
+import Projects from './components/projects';
 import PublicJournal from './components/public-journal';
 import Background from './images/moon.png';
 import Resume from './components/resume';
@@ -46,6 +46,8 @@ const useStyles = makeStyles((theme) => ({
 		color: 'transparent',
 	},
 	bottomAppBar: {
+		display: 'flex',
+		flexDirection: 'column',
 		top: 'auto',
 		bottom: '0',
 		color: 'transparent',
@@ -63,10 +65,10 @@ const useStyles = makeStyles((theme) => ({
 		alignSelf: 'center',
 		justifyContent: 'center',
 		width: '100%',
-		minHeight: '650px',
+		minHeight: '1000px',
 		backgroundImage: 'url(' + Background + ')',
 		backgroundAttachment: 'fixed',
-		backgroundPosition: 'center top',
+		backgroundPosition: 'center',
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 	},
@@ -93,8 +95,8 @@ export default function App(props: IAppProps) {
 						<Route path="/blog">
 							<PublicJournal />
 						</Route>
-						<Route path="/support">
-							<Support />
+						<Route path="/projects">
+							<Projects />
 						</Route>
 						<Route path="/resume">
 							<Resume />

@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
 		alignContent: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
+		height: '100%',
 		width: '98%',
 		margin: '20px',
 		borderRadius: '0',
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function Support(props: IPageProps) {
+export default function Projects(props: IPageProps) {
 	const classes = useStyles(theme);
 
 	return (
