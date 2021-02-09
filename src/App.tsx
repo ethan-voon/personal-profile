@@ -11,6 +11,7 @@ import Projects from './components/projects';
 import PublicJournal from './components/public-journal';
 import Background from './images/moon.png';
 import Resume from './components/resume';
+import WCC from './components/wcc';
 
 export interface IAppProps {}
 export interface IPageProps {}
@@ -100,6 +101,9 @@ export default function App(props: IAppProps) {
 						</Route>
 						<Route path="/resume">
 							<Resume />
+						</Route>
+						<Route path="/wcc">
+							<WCC />
 						</Route>
 						<Route exact path="/">
 							<Home />
