@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Card, CardContent, Grid } from '@material-ui/core';
+import { Button, CardContent, Grid } from '@material-ui/core';
 import { IPageProps, theme } from '../App';
+import PageCard from './page-card';
 
-const useStyles = makeStyles((theme) => ({
-	pageCard: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignContent: 'center',
-		textAlign: 'center',
-		width: '98%',
-		margin: '20px',
-		overflow: 'scroll',
-		borderRadius: '0',
-		backgroundColor: 'rgb(256, 256, 256, 0.6)',
-	},
-}));
+const useStyles = makeStyles((theme) => ({}));
 
 export default function Resume(props: IPageProps) {
 	const classes = useStyles(theme);
 
 	return (
 		<>
-			<Card component={'span'} classes={{ root: classes.pageCard }}>
+			<PageCard>
 				<CardContent>
-					<Grid container component="span">
+					<Grid
+						container
+						component="span"
+						direction="column"
+						alignItems="center"
+						justify="center"
+					>
 						<Grid xs={12} component="span" item>
 							<iframe
 								src="https://docs.google.com/document/d/e/2PACX-1vSzaOht9O_9RLUkgp3d35QaaX9m2p-OZ6U-OE-i4aX985CU4Lx3bM5uIP4dYWlfYWgxkOj47bKiuCb8/pub?embedded=true"
@@ -44,7 +39,7 @@ export default function Resume(props: IPageProps) {
 						</Grid>
 					</Grid>
 				</CardContent>
-			</Card>
+			</PageCard>
 		</>
 	);
 }

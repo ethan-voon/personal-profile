@@ -14,7 +14,9 @@ import Resume from './components/resume';
 import WCC from './components/wcc';
 
 export interface IAppProps {}
-export interface IPageProps {}
+export interface IPageProps {
+	children?: JSX.Element;
+}
 
 export const theme = createMuiTheme({
 	palette: {

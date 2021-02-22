@@ -45,7 +45,7 @@ export default function Header(props: IHeaderProps) {
 							align="center"
 							classes={{ root: classes.headerTitle }}
 						>
-							On a quest to design humane systems for community, education, and data.
+							On a quest to build humane systems for community, education, and data.
 						</Typography>
 					</Tooltip>
 				</Link>

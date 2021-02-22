@@ -5,16 +5,9 @@ import { IPageProps } from '../App';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { Typography } from '@material-ui/core';
+import PageCard from './page-card';
 
-const useStyles = makeStyles((theme) => ({
-	pageCard: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignContent: 'center',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-}));
+const useStyles = makeStyles((theme) => ({}));
 
 export default function Content(props: IPageProps) {
 	const classes = useStyles();
@@ -26,11 +19,11 @@ export default function Content(props: IPageProps) {
 	//		Code
 	return (
 		<>
-			<Card component={'span'} classes={{ root: classes.pageCard }}>
+			<PageCard>
 				<CardContent>
 					<Typography variant="h5">Coming Soon!</Typography>
 				</CardContent>
-			</Card>
+			</PageCard>
 		</>
 	);
 }
