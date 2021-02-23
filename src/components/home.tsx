@@ -1,23 +1,15 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Card, CardContent, CardActions } from '@material-ui/core';
+import { Grid, CardContent, CardActions } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import $ from 'jquery';
 import { IPageProps, theme } from '../App';
+import PageCard from './page-card';
 
 const useStyles = makeStyles((theme) => ({
 	cardActions: {
 		justifyContent: 'center',
-	},
-	navCard: {
-		display: 'flex',
-		minHeight: '200px',
-		justifyContent: 'center',
-		alignItems: 'center',
-		margin: '20px',
-		borderRadius: '0',
-		backgroundColor: 'rgb(256, 256, 256, 0.6)',
 	},
 	text: {
 		opacity: '1',
@@ -50,27 +42,27 @@ export default function Home(props: IPageProps) {
 			<Grid container component="span" alignItems="center" justify="center">
 				<Grid xs={12} component="span" item>
 					<Link to="/about" style={{ textDecoration: 'none' }}>
-						<Card classes={{ root: classes.navCard }} elevation={12}>
+						<PageCard>
 							<Typography variant={'h4'}>About</Typography>
-						</Card>
+						</PageCard>
 					</Link>
 				</Grid>
 				<Grid xs={12} component="span" item>
 					<Link to="/projects" style={{ textDecoration: 'none' }}>
-						<Card classes={{ root: classes.navCard }} elevation={12}>
+						<PageCard>
 							<Typography variant={'h4'}>Projects</Typography>
-						</Card>
+						</PageCard>
 					</Link>
 				</Grid>
 				<Grid xs={12} component="span" item>
 					<Link to="/resume" style={{ textDecoration: 'none' }}>
-						<Card classes={{ root: classes.navCard }} elevation={12}>
+						<PageCard>
 							<Typography variant={'h4'}>Resume</Typography>
-						</Card>
+						</PageCard>
 					</Link>
 				</Grid>
 				<Grid xs={12} component="span" item>
-					<Card classes={{ root: classes.navCard }} elevation={12}>
+					<PageCard>
 						<Grid
 							container
 							alignItems="center"
@@ -91,7 +83,7 @@ export default function Home(props: IPageProps) {
 								</CardActions>
 							</Grid>
 						</Grid>
-					</Card>
+					</PageCard>
 				</Grid>
 			</Grid>
 		</>

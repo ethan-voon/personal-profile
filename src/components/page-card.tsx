@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent } from '@material-ui/core';
+import { Card, CardProps } from '@material-ui/core';
 import { IPageProps, theme } from '../App';
 
 const useStyles = makeStyles((theme) => ({
@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 		textAlgin: 'center',
 		height: '100%',
+		minHeight: '200px',
 		width: '98%',
 		margin: '20px',
 		borderRadius: '0',

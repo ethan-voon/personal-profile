@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 // import ReactMarkdown from 'react-markdown';
 import { IPageProps } from '../App';
-import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { Typography } from '@material-ui/core';
 import PageCard from './page-card';

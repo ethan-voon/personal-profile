@@ -1,14 +1,9 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Button, CardContent, Grid } from '@material-ui/core';
-import { IPageProps, theme } from '../App';
+import { IPageProps } from '../App';
 import PageCard from './page-card';
 
-const useStyles = makeStyles((theme) => ({}));
-
 export default function Resume(props: IPageProps) {
-	const classes = useStyles(theme);
-
 	return (
 		<>
 			<PageCard>
