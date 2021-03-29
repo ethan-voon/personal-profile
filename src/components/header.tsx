@@ -4,9 +4,9 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card } from '@material-ui/core';
-import { IPageProps, theme } from '../App';
+import { PageProps, theme } from '../App';
 
-interface IHeaderProps extends IPageProps {}
+interface HeaderProps extends PageProps {}
 
 const useStyles = makeStyles((theme) => ({
 	headerCard: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function Header(props: IHeaderProps) {
+export default function Header(props: HeaderProps) {
 	const classes = useStyles(theme);
 
 	return (

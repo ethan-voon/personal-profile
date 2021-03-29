@@ -8,13 +8,11 @@ import Header from './components/header';
 import Home from './components/home';
 import About from './components/about';
 import Projects from './components/projects';
-import PublicJournal from './components/public-journal';
 import Background from './images/moon.png';
-import Resume from './components/resume';
-import WCC from './components/wcc';
+import Blog from './components/blog';
 
-export interface IAppProps {}
-export interface IPageProps {
+export interface AppProps {}
+export interface PageProps {
 	children?: JSX.Element;
 }
 
@@ -68,7 +66,8 @@ const useStyles = makeStyles((theme) => ({
 		alignSelf: 'center',
 		justifyContent: 'center',
 		width: '100%',
-		minHeight: '1000px',
+		height: '100%',
+		minheight: '1000px',
 		backgroundImage: 'url(' + Background + ')',
 		backgroundAttachment: 'fixed',
 		backgroundPosition: 'center',
@@ -77,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function App(props: IAppProps) {
+export default function App(props: AppProps) {
 	const classes = useStyles(theme);
 
 	return (
@@ -96,16 +95,10 @@ export default function App(props: IAppProps) {
 							<About />
 						</Route>
 						<Route path="/blog">
-							<PublicJournal />
+							<Blog />
 						</Route>
 						<Route path="/projects">
 							<Projects />
-						</Route>
-						<Route path="/resume">
-							<Resume />
-						</Route>
-						<Route path="/wcc">
-							<WCC />
 						</Route>
 						<Route exact path="/">
 							<Home />

@@ -4,7 +4,7 @@ import { Grid, CardContent, CardActions } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import $ from 'jquery';
-import { IPageProps, theme } from '../App';
+import { PageProps, theme } from '../App';
 import PageCard from './page-card';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function Home(props: IPageProps) {
+export default function Home(props: PageProps) {
 	const classes = useStyles(theme);
 
 	// For ConvertKit integration
@@ -55,9 +55,9 @@ export default function Home(props: IPageProps) {
 					</Link>
 				</Grid>
 				<Grid xs={12} component="span" item>
-					<Link to="/resume" style={{ textDecoration: 'none' }}>
+					<Link to="/blog" style={{ textDecoration: 'none' }}>
 						<PageCard>
-							<Typography variant={'h4'}>Resume</Typography>
+							<Typography variant={'h4'}>Blog</Typography>
 						</PageCard>
 					</Link>
 				</Grid>

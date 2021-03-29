@@ -21,7 +21,7 @@ export default function Footer() {
 			<Card classes={{ root: classes.root }} elevation={12}>
 				<ContactMenu />
 				<Typography variant="subtitle2">
-					@2020 by Ethan Voon,{' '}
+					@2021 by Ethan Voon,{' '}
 					<a href="https://github.com/ethan-voon/personal-profile">Source Code</a>
 				</Typography>
 			</Card>

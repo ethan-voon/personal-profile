@@ -4,7 +4,7 @@
 		"module": "esNext",
 		"jsx": "react",
 		"target": "esnext",
-		"lib": ["es2017.object", "es2016.array.include", "es6", "dom"],
+		"lib": ["es2017.object", "es2016.array.include", "es6", "dom", "esnext"],
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
 		"checkJs": true,

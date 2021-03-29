@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ReactMarkdown from 'react-markdown';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import { IPageProps, theme } from '../App';
+import { PageProps, theme } from '../App';
 import MyPortrait from '../images/my-portrait.jpg';
 import AboutMarkdown from '../content/about.md';
 import PageCard from './page-card';
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function About(props: IPageProps) {
+export default function About(props: PageProps) {
 	const classes = useStyles(theme);
 	const [markdown, setMarkdown] = useState('');
 	useEffect(() => {
