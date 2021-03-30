@@ -9,7 +9,8 @@ import Home from './components/home';
 import About from './components/about';
 import Projects from './components/projects';
 import Background from './images/moon.png';
-import Blog from './components/blog';
+import Blog, { PostPreview } from './components/blog';
+import BlogPost from './components/blog-post';
 
 export interface AppProps {}
 export interface PageProps {
@@ -88,21 +89,12 @@ export default function App(props: AppProps) {
 				</AppBar>
 				<span className={classes.pageWrapper}>
 					<Switch>
-						<Route path="/home">
-							<Home />
-						</Route>
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/blog">
-							<Blog />
-						</Route>
-						<Route path="/projects">
-							<Projects />
-						</Route>
-						<Route exact path="/">
-							<Home />
-						</Route>
+						<Route exact path="/home" children={<Home />} />
+						<Route exact path="/about" children={<About />} />
+						<Route exact path="/blog/:id" children={<BlogPost />} />
+						<Route exact path="/blog" children={<Blog />} />
+						<Route exact path="/projects" children={<Projects />} />
+						<Route exact path="/" children={<Home />} />
 					</Switch>
 				</span>
 				<AppBar position="sticky" classes={{ root: classes.bottomAppBar }} elevation={0}>

@@ -6,47 +6,49 @@ import { CardActions, Grid, Typography } from '@material-ui/core';
 import PageCard from './page-card';
 import axios from 'axios';
 import $ from 'jquery';
+import { Link, useParams } from 'react-router-dom';
+import Subscribe from './subscribe';
 
 const useStyles = makeStyles((theme) => ({
 	cardActions: {
 		justifyContent: 'center',
 	},
-	postPreview: {
+	post: {
 		justifyContent: 'left',
 		width: '100%',
 	},
 }));
 
 // https://developer.wordpress.org/rest-api/reference/posts/
-interface Post {
-	id: number;
+export interface Post {
+	ID: string;
 	date: string;
 	title: string;
 	content: string;
 	excerpt: string;
 }
 
-interface PostProps {
-	post: Post;
+export interface PostProps {
+	post?: Post;
 }
 
-function PostPreview(props: PostProps) {
+export function PostPreview(props: PostProps) {
 	const classes = useStyles();
-	const date = new Date(props.post.date).toDateString();
-	// @TODO each excerpt should link to the full post, passing the post via props
-	if (props.post) {
+	const { post } = props;
+	if (post) {
+		const date = new Date(post.date).toDateString();
+		const previewText = new DOMParser().parseFromString(post.excerpt, 'text/html')
+			.documentElement.textContent;
+
 		return (
 			<PageCard>
-				<CardContent classes={{ root: classes.postPreview }}>
-					<Typography variant="h5">{props.post.title}</Typography>
-					<Typography variant="caption">{date}</Typography>
-					<Typography variant="body1">
-						{
-							new DOMParser().parseFromString(props.post.excerpt, 'text/html')
-								.documentElement.textContent
-						}
-					</Typography>
-				</CardContent>
+				<Link to={`/blog/${post.ID}`} style={{ textDecoration: 'none' }}>
+					<CardContent classes={{ root: classes.post }}>
+						<Typography variant="h5">{post.title}</Typography>
+						<Typography variant="caption">{date}</Typography>
+						<Typography variant="body1">{previewText}</Typography>
+					</CardContent>
+				</Link>
 			</PageCard>
 		);
 	} else {
@@ -93,7 +95,7 @@ export default function Blog(props: PageProps) {
 	return (
 		<>
 			<PageCard>
-				<CardContent classes={{ root: classes.postPreview }}>
+				<CardContent classes={{ root: classes.post }}>
 					<Typography variant="h5">About the Blog</Typography>
 					<Typography variant="body1">
 						I constantly prevent myself from posting content online because I don't have
@@ -107,29 +109,15 @@ export default function Blog(props: PageProps) {
 						and conversation by sharing my thoughts about what I learn. Come along if
 						you want!
 					</Typography>
-					<Grid
-						container
-						alignItems="center"
-						alignContent="center"
-						justify="center"
-						style={{ textAlign: 'center' }}
-					>
-						<Grid xs={12} component="span" item>
-							<CardContent>
-								<Typography variant={'h4'}>
-									Want to know when I write stuff?
-								</Typography>
-							</CardContent>
-						</Grid>
-						<Grid xs={12} component="span" item>
-							<CardActions classes={{ root: classes.cardActions }}>
-								<script async data-uid="6b652f3c27" />
-							</CardActions>
-						</Grid>
-					</Grid>
+					<Subscribe />
 				</CardContent>
 			</PageCard>
-			{postPreviews}
+			<PageCard>
+				<CardContent classes={{ root: classes.post }}>
+					<Typography variant={'h4'}>Posts</Typography>
+					{postPreviews}
+				</CardContent>
+			</PageCard>
 		</>
 	);
 }
