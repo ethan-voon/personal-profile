@@ -9,7 +9,7 @@ import Home from './components/home';
 import About from './components/about';
 import Projects from './components/projects';
 import Background from './images/moon.png';
-import Blog, { PostPreview } from './components/blog';
+import Blog from './components/blog';
 import BlogPost from './components/blog-post';
 
 export interface AppProps {}
@@ -48,32 +48,26 @@ const useStyles = makeStyles((theme) => ({
 		color: 'transparent',
 	},
 	bottomAppBar: {
-		display: 'flex',
-		flexDirection: 'column',
 		top: 'auto',
 		bottom: '0',
 		color: 'transparent',
 		background: 'transparent',
 	},
-	headerTitle: {
-		paddingTop: '2%',
-		paddingBottom: '2%',
-	},
 	pageWrapper: {
+		backgroundImage: 'url(' + Background + ')',
+		backgroundPosition: 'center',
+		backgroundSize: 'cover',
+		backgroundAttachment: 'fixed',
+		width: '100vw',
+		height: '100vh',
+		overflow: 'auto',
+	},
+	contentWrapper: {
 		display: 'flex',
 		flexDirection: 'column',
-		alignItems: 'center',
 		alignContent: 'center',
-		alignSelf: 'center',
-		justifyContent: 'center',
-		width: '100%',
-		height: '100%',
-		minheight: '1000px',
-		backgroundImage: 'url(' + Background + ')',
-		backgroundAttachment: 'fixed',
-		backgroundPosition: 'center',
-		backgroundRepeat: 'no-repeat',
-		backgroundSize: 'cover',
+		alignItems: 'center',
+		marginBottom: '2em',
 	},
 }));
 
@@ -84,22 +78,28 @@ export default function App(props: AppProps) {
 		<>
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
-				<AppBar position="sticky" classes={{ root: classes.topAppBar }} elevation={12}>
-					<Header />
-				</AppBar>
-				<span className={classes.pageWrapper}>
-					<Switch>
-						<Route exact path="/home" children={<Home />} />
-						<Route exact path="/about" children={<About />} />
-						<Route exact path="/blog/:id" children={<BlogPost />} />
-						<Route exact path="/blog" children={<Blog />} />
-						<Route exact path="/projects" children={<Projects />} />
-						<Route exact path="/" children={<Home />} />
-					</Switch>
-				</span>
-				<AppBar position="sticky" classes={{ root: classes.bottomAppBar }} elevation={0}>
-					<Footer />
-				</AppBar>
+				<div className={classes.pageWrapper}>
+					<AppBar position="sticky" classes={{ root: classes.topAppBar }} elevation={12}>
+						<Header />
+					</AppBar>
+					<div className={classes.contentWrapper}>
+						<Switch>
+							<Route exact path="/home" children={<Home />} />
+							<Route exact path="/about" children={<About />} />
+							<Route exact path="/blog/:id" children={<BlogPost />} />
+							<Route exact path="/blog" children={<Blog />} />
+							<Route exact path="/projects" children={<Projects />} />
+							<Route exact path="/" children={<Home />} />
+						</Switch>
+					</div>
+					<AppBar
+						position="fixed"
+						classes={{ root: classes.bottomAppBar }}
+						elevation={12}
+					>
+						<Footer />
+					</AppBar>
+				</div>
 			</MuiThemeProvider>
 		</>
 	);

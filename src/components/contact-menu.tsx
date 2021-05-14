@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({}));
 
 export function MyEmail() {
 	return (
-		<IconButton href="mailto:epvoon@gmail.com">
+		<IconButton href="mailto:ethanvoon@outlook.com">
 			<EmailIcon />
 		</IconButton>
 	);

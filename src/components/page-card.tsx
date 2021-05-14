@@ -1,31 +1,39 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardProps } from '@material-ui/core';
+import { Card } from '@material-ui/core';
 import { PageProps, theme } from '../App';
+import { ClassNameMap } from '@material-ui/core/styles/withStyles';
+
+interface PageCardProps extends PageProps {
+	styles?: ClassNameMap<'pageCard'>;
+}
 
 const useStyles = makeStyles((theme) => ({
 	pageCard: {
-		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
+		position: 'relative',
 		alignContent: 'center',
 		alignItems: 'center',
+		alignSelf: 'center',
 		justifyContent: 'center',
-		textAlgin: 'center',
-		width: '98%',
-		height: '100%',
-		minHeight: '200px',
-		margin: '20px',
-		borderRadius: '0',
-		backgroundColor: 'rgb(256, 256, 256, 0.6)',
+		textAlign: 'center',
+		width: '90vw',
+		minHeight: '10em',
+		marginTop: '1em',
+		marginBottom: '1em',
+		borderRadius: '2em',
+		backgroundColor: 'rgb(256, 256, 256, 0.85)',
 	},
 }));
 
-export default function PageCard(props: PageProps) {
+export default function PageCard(props: PageCardProps) {
 	const classes = useStyles(theme);
 
+	var pageCardClass = props.styles ? props.styles.pageCard : classes.pageCard;
+
 	return (
-		<Card component={'span'} classes={{ root: classes.pageCard }}>
+		<Card component={'span'} classes={{ root: pageCardClass }}>
 			{props.children}
 		</Card>
 	);

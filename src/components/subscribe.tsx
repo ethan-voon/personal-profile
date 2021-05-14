@@ -42,7 +42,7 @@ export default function Subscribe(props: PageProps) {
 			>
 				<Grid xs={12} component="span" item>
 					<CardContent>
-						<Typography variant={'h4'}>Want to know when I write stuff?</Typography>
+						<Typography variant={'h5'}>Want to know when I write stuff?</Typography>
 					</CardContent>
 				</Grid>
 				<Grid xs={12} component="span" item>

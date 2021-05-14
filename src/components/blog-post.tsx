@@ -10,12 +10,9 @@ import parse from 'html-react-parser';
 import Subscribe from './subscribe';
 
 const useStyles = makeStyles((theme) => ({
-	cardActions: {
+	cardContent: {
 		justifyContent: 'center',
-	},
-	post: {
-		justifyContent: 'left',
-		width: '100%',
+		padding: '1em',
 	},
 }));
 
@@ -43,7 +40,7 @@ export default function BlogPost(props: PostProps) {
 
 		return (
 			<PageCard>
-				<CardContent classes={{ root: classes.post }}>
+				<CardContent classes={{ root: classes.cardContent }}>
 					<Typography variant="h5">{post.title}</Typography>
 					<Typography variant="caption">{date}</Typography>
 					<Typography variant="body1">{parse(post.content)}</Typography>
@@ -54,7 +51,7 @@ export default function BlogPost(props: PostProps) {
 	} else {
 		return (
 			<PageCard>
-				<CardContent classes={{ root: classes.post }}>
+				<CardContent>
 					<Typography variant="h5">Post not found.</Typography>
 				</CardContent>
 			</PageCard>

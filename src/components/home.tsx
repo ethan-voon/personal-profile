@@ -1,15 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Tooltip } from '@material-ui/core';
+import { CardContent, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { PageProps, theme } from '../App';
 import PageCard from './page-card';
 
 const useStyles = makeStyles((theme) => ({
-	text: {
-		opacity: '1',
-		background: 'transparent',
+	cardContent: {
+		position: 'absolute',
+		width: '100%',
+		top: '0',
+		right: '0',
+		left: '0',
+		bottom: '0',
+	},
+	cardText: {
+		position: 'relative',
+		textAlign: 'center',
+		top: '1em',
+		right: '0',
+		left: '0',
+		bottom: '0',
 	},
 }));
 
@@ -18,35 +30,39 @@ export default function Home(props: PageProps) {
 
 	return (
 		<>
-			<Grid container component="span" alignItems="center" justify="center">
-				<Grid xs={12} component="span" item>
-					<Link to="/about" style={{ textDecoration: 'none' }}>
-						<PageCard>
-							<Tooltip title="Learn more about me.">
-								<Typography variant={'h4'}>About</Typography>
-							</Tooltip>
-						</PageCard>
-					</Link>
-				</Grid>
-				<Grid xs={12} component="span" item>
+			<PageCard>
+				<Link to="/about" style={{ textDecoration: 'none' }}>
+					<CardContent classes={{ root: classes.cardContent }}>
+						<Tooltip title="Learn more about me.">
+							<Typography variant={'h4'} classes={{ root: classes.cardText }}>
+								About
+							</Typography>
+						</Tooltip>
+					</CardContent>
+				</Link>
+			</PageCard>
+			<PageCard>
+				<CardContent classes={{ root: classes.cardContent }}>
 					<Link to="/blog" style={{ textDecoration: 'none' }}>
-						<PageCard>
-							<Tooltip title="Sometimes I write stuff, click here to read on!">
-								<Typography variant={'h4'}>Blog</Typography>
-							</Tooltip>
-						</PageCard>
+						<Tooltip title="Sometimes I write stuff, click here to read on!">
+							<Typography variant={'h4'} classes={{ root: classes.cardText }}>
+								Blog
+							</Typography>
+						</Tooltip>
 					</Link>
-				</Grid>
-				<Grid xs={12} component="span" item>
-					<Link to="/projects" style={{ textDecoration: 'none' }}>
-						<PageCard>
-							<Tooltip title="Side projects I'm working on.">
-								<Typography variant={'h4'}>Projects</Typography>
-							</Tooltip>
-						</PageCard>
-					</Link>
-				</Grid>
-			</Grid>
+				</CardContent>
+			</PageCard>
+			<PageCard>
+				<Link to="/projects" style={{ textDecoration: 'none' }}>
+					<CardContent classes={{ root: classes.cardContent }}>
+						<Tooltip title="Side projects I'm working on.">
+							<Typography variant={'h4'} classes={{ root: classes.cardText }}>
+								Projects
+							</Typography>
+						</Tooltip>
+					</CardContent>
+				</Link>
+			</PageCard>
 		</>
 	);
 }
