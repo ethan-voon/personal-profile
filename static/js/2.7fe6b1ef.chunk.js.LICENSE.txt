@@ -16,13 +16,6 @@ object-assign
    */
 
 /*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-/*!
  * jQuery JavaScript Library v3.6.0
  * https://jquery.com/
  *
@@ -34,13 +27,6 @@ object-assign
  * https://jquery.org/license
  *
  * Date: 2021-03-02T17:08Z
- */
-
-/*!
- * repeat-string <https://github.com/jonschlinkert/repeat-string>
- *
- * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License.
  */
 
 /**
