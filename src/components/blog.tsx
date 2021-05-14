@@ -63,7 +63,7 @@ export default function Blog(props: PageProps) {
 	const [posts, setPosts] = useState<Post[]>();
 	useEffect(() => {
 		axios
-			.get('http://public-api.wordpress.com/rest/v1/sites/epvoon.wordpress.com/posts')
+			.get('https://public-api.wordpress.com/rest/v1/sites/epvoon.wordpress.com/posts')
 			.then((res) => {
 				setPosts(res.data.posts);
 			})
