@@ -22,13 +22,17 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+interface Rendered {
+	rendered: string;
+}
+
 // https://developer.wordpress.org/rest-api/reference/posts/
 export interface Post {
-	ID: string;
+	id: string;
 	date: string;
-	title: string;
-	content: string;
-	excerpt: string;
+	title: Rendered;
+	content: Rendered;
+	excerpt: Rendered;
 }
 
 export interface PostProps {
@@ -40,14 +44,14 @@ export function PostPreview(props: PostProps) {
 	const { post } = props;
 	if (post) {
 		const date = new Date(post.date).toDateString();
-		const previewText = new DOMParser().parseFromString(post.excerpt, 'text/html')
+		const previewText = new DOMParser().parseFromString(post.excerpt.rendered, 'text/html')
 			.documentElement.textContent;
 
 		return (
 			<PageCard>
-				<Link to={`/blog/${post.ID}`} style={{ textDecoration: 'none' }}>
+				<Link to={`/blog/${post.id}`} style={{ textDecoration: 'none' }}>
 					<CardContent classes={{ root: classes.post }}>
-						<Typography variant="h5">{post.title}</Typography>
+						<Typography variant="h5">{post.title.rendered}</Typography>
 						<Typography variant="caption">{date}</Typography>
 						<Typography variant="body1">{previewText}</Typography>
 					</CardContent>
@@ -63,9 +67,10 @@ export default function Blog(props: PageProps) {
 	const [posts, setPosts] = useState<Post[]>();
 	useEffect(() => {
 		axios
-			.get('https://public-api.wordpress.com/rest/v1/sites/epvoon.wordpress.com/posts')
+			.get('https://blog.ethanvoon.com/wp-json/wp/v2/posts/?per_page=5')
 			.then((res) => {
-				setPosts(res.data.posts);
+				console.log(res);
+				setPosts(res.data);
 			})
 			.catch((error) => console.log(error));
 	}, []);

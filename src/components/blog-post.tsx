@@ -19,15 +19,15 @@ const useStyles = makeStyles((theme) => ({
 export default function BlogPost(props: PostProps) {
 	const classes = useStyles();
 	const [post, setPost] = useState(props.post);
+	const [isLoading, setIsLoading] = useState(true);
 	const { id } = useParams<{ id: string }>();
-	console.log(id);
 
 	useEffect(() => {
 		axios
-			.get(`http://public-api.wordpress.com/rest/v1/sites/epvoon.wordpress.com/posts/${id}`)
+			.get(`https://blog.ethanvoon.com/wp-json/wp/v2/posts/${id}`)
 			.then((res) => {
 				setPost(res.data);
-				console.log(res.data);
+				setIsLoading(false);
 			})
 			.catch((error) => console.log(error));
 	}, []);
@@ -41,10 +41,18 @@ export default function BlogPost(props: PostProps) {
 		return (
 			<PageCard>
 				<CardContent classes={{ root: classes.cardContent }}>
-					<Typography variant="h5">{post.title}</Typography>
+					<Typography variant="h5">{post.title.rendered}</Typography>
 					<Typography variant="caption">{date}</Typography>
-					<Typography variant="body1">{parse(post.content)}</Typography>
+					<Typography variant="body1">{parse(post.content.rendered)}</Typography>
 					<Subscribe />
+				</CardContent>
+			</PageCard>
+		);
+	} else if (isLoading) {
+		return (
+			<PageCard>
+				<CardContent>
+					<Typography variant="h5">Fetching post...</Typography>
 				</CardContent>
 			</PageCard>
 		);

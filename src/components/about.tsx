@@ -55,8 +55,7 @@ export default function About(props: PageProps) {
 					Following graduation, I worked as an intern at Faithlife and earned a full-time
 					position at the end of the summer. During my tenure at Faithlife I developed the
 					skills of a full-stack developer by working on RESTful web APIs, internal tools,
-					and React applications. Now I'm discovering a newfound passion for community and
-					building with the simple mission of improving the lives of those around me.
+					and React applications. I currently work at Whatcom Community College.
 				</p>
 				<p>
 					I love one on one discussions! Please, don’t be shy and feel free to{' '}

@@ -28,8 +28,7 @@ export default function Projects(props: PageProps) {
 							Community Solutions
 						</Typography>
 						<Typography variant="caption" align="center">
-							A personal project aimed to build equitable systems for a wide array of
-							communities.
+							On a mission to build equitable systems for a wide array of communities.
 						</Typography>
 					</CardContent>
 				</a>
