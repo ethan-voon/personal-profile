@@ -53,7 +53,13 @@ export default function Header(props: HeaderProps) {
 					</Typography>
 				</Tooltip>
 				<Tooltip title="Contact me!">
-					<ContactMenu />
+					<ContactMenu
+						email="ethanvoon@outlook.com"
+						phone="3604815632"
+						facebook="ethan.voon"
+						linkedin="ethanvoon"
+						twitter="ethanvoon"
+					/>
 				</Tooltip>
 			</Card>
 		</>

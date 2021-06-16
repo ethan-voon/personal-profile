@@ -65,12 +65,13 @@ export function PostPreview(props: PostProps) {
 
 export default function Blog(props: PageProps) {
 	const [posts, setPosts] = useState<Post[]>();
+	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
 		axios
 			.get('https://blog.ethanvoon.com/wp-json/wp/v2/posts/?per_page=5')
 			.then((res) => {
-				console.log(res);
 				setPosts(res.data);
+				setIsLoading(false);
 			})
 			.catch((error) => console.log(error));
 	}, []);
@@ -104,6 +105,9 @@ export default function Blog(props: PageProps) {
 			<PageCard>
 				<CardContent>
 					<Typography variant="h4">Blog</Typography>
+					<Typography variant={'subtitle1'}>
+						When the day comes that I finally get around to it...
+					</Typography>
 					<Subscribe />
 				</CardContent>
 			</PageCard>

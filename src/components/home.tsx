@@ -5,8 +5,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { PageProps, theme } from '../App';
 import PageCard from './page-card';
+import Calendly from './calendly';
 
 const useStyles = makeStyles((theme) => ({
+	calendly: {
+		overflow: 'hidden',
+	},
 	cardContent: {
 		position: 'absolute',
 		width: '100%',
@@ -22,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 		right: '0',
 		left: '0',
 		bottom: '0',
+		marginBottom: '2em',
 	},
 }));
 
@@ -62,6 +67,21 @@ export default function Home(props: PageProps) {
 						</Tooltip>
 					</CardContent>
 				</Link>
+			</PageCard>
+			<PageCard>
+				<>
+					<a
+						href="https://calendly.com/ethanvoon/meeting"
+						style={{ textDecoration: 'none' }}
+					>
+						<Tooltip title="Sometimes I write stuff, click here to read on!">
+							<Typography variant={'h4'} classes={{ root: classes.cardText }}>
+								Schedule
+							</Typography>
+						</Tooltip>
+					</a>
+					<Calendly />
+				</>
 			</PageCard>
 		</>
 	);

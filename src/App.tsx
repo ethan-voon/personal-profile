@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: 'column',
 		alignContent: 'center',
 		alignItems: 'center',
+		marginTop: '12em',
 		marginBottom: '2em',
 	},
 }));
@@ -79,7 +80,7 @@ export default function App(props: AppProps) {
 			<MuiThemeProvider theme={theme}>
 				<CssBaseline />
 				<div className={classes.pageWrapper}>
-					<AppBar position="sticky" classes={{ root: classes.topAppBar }} elevation={12}>
+					<AppBar position="fixed" classes={{ root: classes.topAppBar }} elevation={12}>
 						<Header />
 					</AppBar>
 					<div className={classes.contentWrapper}>
