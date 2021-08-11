@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { PageProps } from '../App';

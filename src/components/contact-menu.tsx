@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
@@ -75,7 +76,7 @@ export default function ContactMenu(props: ContactProps) {
 	return (
 		<Grid component="span" justify="center" alignItems="center" spacing={1} container>
 			{Object.entries(socialLinks).map(([key, value]) => {
-				if (!value) return;
+				if (!value) return null;
 
 				return (
 					<Grid component="span" item>

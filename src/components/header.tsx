@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -49,7 +50,8 @@ export default function Header(props: HeaderProps) {
 						align="center"
 						classes={{ root: classes.headerTitle }}
 					>
-						On a quest to build modern systems for community, education, and data.
+						On a quest to build modern systems that propel us towards a future of
+						cooperative economics.
 					</Typography>
 				</Tooltip>
 				<Tooltip title="Contact me!">

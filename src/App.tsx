@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { AppBar } from '@material-ui/core';

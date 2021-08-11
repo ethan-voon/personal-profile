@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CardContent from '@material-ui/core/CardContent';
@@ -30,13 +31,11 @@ export default function BlogPost(props: PostProps) {
 				setIsLoading(false);
 			})
 			.catch((error) => console.log(error));
-	}, []);
+	});
 
 	if (post) {
+		// console.log(post);
 		const date = new Date(post.date).toDateString();
-		// const postText = new DOMParser().parseFromString(post.content, 'text/html').documentElement
-		// 	.textContent;
-		console.log(post);
 
 		return (
 			<PageCard>

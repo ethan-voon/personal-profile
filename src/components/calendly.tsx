@@ -1,25 +1,9 @@
+// eslint-disable-next-line
 import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { PageProps, theme } from '../App';
-import { Card, CardContent, Tooltip } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
-import PageCard from './page-card';
+import { PageProps } from '../App';
 import $ from 'jquery';
 
-const useStyles = makeStyles((theme) => ({
-	cardText: {
-		position: 'relative',
-		textAlign: 'center',
-		top: '1em',
-		right: '0',
-		left: '0',
-		bottom: '0',
-	},
-}));
-
 export default function Calendly(props: PageProps) {
-	const classes = useStyles(theme);
-
 	useEffect(() => {
 		const script = document.createElement('script');
 

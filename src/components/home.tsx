@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CardContent, Tooltip } from '@material-ui/core';
@@ -74,7 +75,7 @@ export default function Home(props: PageProps) {
 						href="https://calendly.com/ethanvoon/meeting"
 						style={{ textDecoration: 'none' }}
 					>
-						<Tooltip title="Sometimes I write stuff, click here to read on!">
+						<Tooltip title="I love one-on-one conversations, let's chat!">
 							<Typography variant={'h4'} classes={{ root: classes.cardText }}>
 								Schedule
 							</Typography>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { PageProps } from '../App';
@@ -65,13 +66,14 @@ export function PostPreview(props: PostProps) {
 
 export default function Blog(props: PageProps) {
 	const [posts, setPosts] = useState<Post[]>();
-	const [isLoading, setIsLoading] = useState(true);
+	// const [isLoading, setIsLoading] = useState(true);
+
 	useEffect(() => {
 		axios
 			.get('https://blog.ethanvoon.com/wp-json/wp/v2/posts/?per_page=5')
 			.then((res) => {
 				setPosts(res.data);
-				setIsLoading(false);
+				// setIsLoading(false);
 			})
 			.catch((error) => console.log(error));
 	}, []);
