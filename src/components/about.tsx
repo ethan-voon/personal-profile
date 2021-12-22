@@ -34,13 +34,15 @@ export default function About(props: PageProps) {
 				/>
 				<h1 id="about-me">About Me</h1>
 				<p>
-					Born in Visalia, CA and raised throughout the Pacific Northwest. Today you can
-					find me in the ‘City of Subdued Excitement’ –{' '}
+					Born in Visalia, CA and raised throughout the Pacific Northwest. I spent many
+					years in the ‘City of Subdued Excitement’ –{' '}
 					<a href="https://en.wikipedia.org/wiki/Bellingham,_Washington">
 						Bellingham, WA
 					</a>
-					. I share a home with my life partner, Ellie, our baby Silas, and our{' '}
-					<em>loud</em> cattle dog, Indi.
+					. However, nowadays you can find me in the ‘Rose City’ –{' '}
+					<a href="https://en.wikipedia.org/wiki/Portland,_Oregon">Portland, OR</a>. I
+					share a home with my life partner, Ellie, our baby Silas, and our <em>loud</em>{' '}
+					cattle dog, Indi.
 				</p>
 				<p>
 					I was brought up in a house of music and continue to play whatever instrument I

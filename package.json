@@ -37,7 +37,6 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build && cp build/index.html build/404.html",
-		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build && cp build/index.html build/404.html",
 		"prettier": "prettier --write \"{*.{js,ts},src/**/*.{js,jsx,ts,tsx,less}}\"",
 		"prettier-check": "prettier --list-different \"{*.{js,ts},src/**/*.{js,jsx,ts,tsx}}\""
