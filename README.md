@@ -1,4 +1,4 @@
-## Ethan Voon's Github Pages Website
+# Ethan Voon's Github Pages Website
 
 I decided to opt-out of a generic template or website builder. Instead, I wrote this site using react and github pages. This decision came about primarily because I wanted a project to practice learning react and front-end web development.
 
